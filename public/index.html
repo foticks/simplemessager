@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Messenger</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Иконка для главного экрана -->
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+    <div id="app">
+        <!-- Экран регистрации -->
+        <div id="register-screen" class="screen active">
+            <h1>Регистрация</h1>
+            <input type="text" id="user-id" placeholder="Придумай 6-значный ID" maxlength="6" autocomplete="off">
+			<label for="avatar-upload" style="cursor: pointer; padding: 10px; background-color: #4CAF50; color: white; border-radius: 5px;">
+    📂 Выбрать аватарку
+</label>
+<input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+
+<br><br>
+<button onclick="register()">Зарегистрироваться</button>
+            <p id="error-message" style="color: red;"></p>
+        </div>
+
+        <!-- Основной экран чата -->
+        <div id="chat-screen" class="screen">
+            <header>
+                <img id="user-avatar" src="default-avatar.png" alt="Аватар">
+                <span id="user-name"></span>
+                <button onclick="logout()">Выйти</button>
+            </header>
+            
+            <div id="chat-container">
+                <!-- Список пользователей -->
+                <div id="user-list">
+                    <h2>Пользователи</h2>
+                    <div id="users"></div>
+                </div>
+                
+                <!-- Окно чата -->
+                <div id="chat-window">
+                    <div id="messages"></div>
+                    <form id="message-form">
+                        <input type="text" id="message-input" placeholder="Напишите сообщение..." autocomplete="off">
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script> <!-- Библиотека Socket.io -->
+    <script src="/script.js"></script>
+</body>
+</html>

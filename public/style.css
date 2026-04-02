@@ -1,0 +1,98 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+#user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+#chat-container {
+    display: flex;
+}
+
+#user-list {
+    width: 250px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+}
+
+#users div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#users div:hover {
+    background-color: #f9f9f9;
+}
+
+#chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+.message {
+    margin-bottom: 10px;
+}
+.message .meta {
+    font-size: 12px;
+    color: #888;
+}
+.message .text {
+    background-color: #e9ffdb; /* Светло-зеленый для своих сообщений */
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 70%;
+}
+.message .text.others {
+    background-color: #ffffff; /* Белый для чужих */
+}
+
+#message-form {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+}
+
+#message-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+#message-form button {
+    margin-left: 10px;
+}
